@@ -17,6 +17,7 @@ export class ParkingApiService {
            "pass" : "123"
            }`;
     this.users = obj;
+    console.log(obj);
     return this.users;
     /*
     let query = `?q=${parameter}&type=artist`;
