@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { TableComponent } from './components/table/table.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import {ParkingApiService} from './services/parkingApi.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,9 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    ParkingApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

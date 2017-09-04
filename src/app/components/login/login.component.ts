@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ParkingApiService} from '../../services/parkingApi.service'
+import { ParkingApiService} from '../../services/parkingApi.service';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +8,7 @@ import { ParkingApiService} from '../../services/parkingApi.service'
 })
 export class LoginComponent implements OnInit {
 
-	user: String = '';	 
+	user: String = '';
 
   constructor(private _parkingApiService:ParkingApiService) { }
 
