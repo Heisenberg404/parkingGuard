@@ -5,7 +5,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { TableComponent } from './components/table/table.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import {ParkingApiService} from './services/parkingApi.service';
+import { ParkingApiService} from './services/parkingApi.service';
+import {HttpModule} from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {ParkingApiService} from './services/parkingApi.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   providers: [
     ParkingApiService
