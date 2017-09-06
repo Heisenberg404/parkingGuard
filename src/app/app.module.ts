@@ -7,13 +7,15 @@ import { TableComponent } from './components/table/table.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { ParkingApiService} from './services/parkingApi.service';
 import {HttpModule} from '@angular/http';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     TableComponent,
-    NavigationComponent
+    NavigationComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

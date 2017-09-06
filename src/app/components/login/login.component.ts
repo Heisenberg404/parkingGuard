@@ -7,17 +7,16 @@ import { ParkingApiService} from '../../services/parkingApi.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  user: String = '';
 
-	user: String = '';
-
-  constructor(private _parkingApiService:ParkingApiService) { }
+  constructor(private _parkingApiService: ParkingApiService) { }
 
 
 
   ngOnInit() {
   }
 
-  getUser (){
+  getUser () {
 
   this._parkingApiService.getUsers(this.user).subscribe();
 
