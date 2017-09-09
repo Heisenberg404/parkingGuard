@@ -1,3 +1,41 @@
 .cell_space {
     width: 10%;
 }
+
+.mg-fluid{
+	margin-left: 25%;
+}
+
+.placa{
+	position: relative;
+    margin-top: -26%;
+    margin-left: 16%;
+}
+
+  #vertical-bar {
+        border-left: 4px solid #ccc;
+        width:2px;
+        height:220px;
+    }
+
+#horizontal-bar{
+        border:2px solid #ccc;
+        width:500px;
+        height:2px;
+    }
+
+    #portfolio{
+    	padding-left: 150px;
+    }
+
+    #titulo{
+    	margin-right:  100px;
+    }
+
+ #titulo1{
+    	margin-left:  380px;
+    }
+
+.nav-tabs{
+	width: 890px;
+}
