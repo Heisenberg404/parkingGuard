@@ -39,3 +39,19 @@
 .nav-tabs{
 	width: 890px;
 }
+
+#carimage{
+	width: 83px;
+    height: 165px;
+    margin-top: 21px;
+}	
+
+.placacar{
+	 margin-left: 30px;
+	 margin-top: 4px;
+}
+
+#modalpay{
+
+	    margin-top: 67px;
+}
