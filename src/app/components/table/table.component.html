@@ -4,16 +4,32 @@
   <div class="modal-dialog">
 
     <!-- Modal content-->
-    <div class="modal-content">
+    <div class="modal-content" id="modalpay">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Parking</h4>
+        <h4 class="modal-title" >Insert Vehycle</h4>
       </div>
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
+
+      <div class="form-group row" style="margin-top: 10px">
+        <label for="example-text-input" class="col-2 col-form-label" style="margin-left: 20px">License</label>
+        <div class="col-8">
+          <input class="form-control" type="text" value="" id="licesetext">
+        </div>
       </div>
+
+
+       <div class="form-group row" style="margin-top: 10px">
+        <label for="example-text-input" class="col-2 col-form-label" style="margin-left: 20px">Cell</label>
+        <div class="col-8">
+          <input class="form-control" id="disabledInput" type="text" placeholder="1" style="text-align: center;" disabled>
+        </div>
+      </div>
+
+
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+        <button type="button" class="btn btn-primary" style="width: 104px; margin-left: 204px; ">Guardar</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
       </div>
     </div>
 
@@ -21,265 +37,499 @@
 </div>
 
 
-    <section id="portfolio" data-toggle="modal" data-target="#myModal">
-      <div class="container">
-        <h2 class="text-center">Parking</h2>
-        <hr class="star-primary">
 
-        <!--
-          inicio de listas quemadas
-        -->
-        <div class="row">
-          <div class="col-md-2 portfolio-item cell_space">
-            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="../../../assets/img/profile.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-2 portfolio-item cell_space">
-            <a class="portfolio-link" href="#portfolioModal2" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="../../../assets/img/profile.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-2 portfolio-item cell_space">
-            <a class="portfolio-link" href="#portfolioModal3" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="../../../assets/img/profile.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-2 portfolio-item cell_space">
-            <a class="portfolio-link" href="#portfolioModal4" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="../../../assets/img/profile.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-2 portfolio-item cell_space">
-            <a class="portfolio-link" href="#portfolioModal5" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="../../../assets/img/profile.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-2 portfolio-item cell_space">
-            <a class="portfolio-link" href="#portfolioModal6" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="../../../assets/img/profile.png" alt="">
-            </a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-2 portfolio-item cell_space">
-            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="../../../assets/img/profile.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-2 portfolio-item cell_space">
-            <a class="portfolio-link" href="#portfolioModal2" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="../../../assets/img/profile.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-2 portfolio-item cell_space">
-            <a class="portfolio-link" href="#portfolioModal3" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="../../../assets/img/profile.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-2 portfolio-item cell_space">
-            <a class="portfolio-link" href="#portfolioModal4" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="../../../assets/img/profile.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-2 portfolio-item cell_space">
-            <a class="portfolio-link" href="#portfolioModal5" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="../../../assets/img/profile.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-2 portfolio-item cell_space">
-            <a class="portfolio-link" href="#portfolioModal6" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="../../../assets/img/profile.png" alt="">
-            </a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-2 portfolio-item cell_space">
-            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="../../../assets/img/profile.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-2 portfolio-item cell_space">
-            <a class="portfolio-link" href="#portfolioModal2" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="../../../assets/img/profile.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-2 portfolio-item cell_space">
-            <a class="portfolio-link" href="#portfolioModal3" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="../../../assets/img/profile.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-2 portfolio-item cell_space">
-            <a class="portfolio-link" href="#portfolioModal4" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="../../../assets/img/profile.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-2 portfolio-item cell_space">
-            <a class="portfolio-link" href="#portfolioModal5" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="../../../assets/img/profile.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-2 portfolio-item cell_space">
-            <a class="portfolio-link" href="#portfolioModal6" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="../../../assets/img/profile.png" alt="">
-            </a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-2 portfolio-item cell_space">
-            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="../../../assets/img/profile.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-2 portfolio-item cell_space">
-            <a class="portfolio-link" href="#portfolioModal2" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="../../../assets/img/profile.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-2 portfolio-item cell_space">
-            <a class="portfolio-link" href="#portfolioModal3" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="../../../assets/img/profile.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-2 portfolio-item cell_space">
-            <a class="portfolio-link" href="#portfolioModal4" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="../../../assets/img/profile.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-2 portfolio-item cell_space">
-            <a class="portfolio-link" href="#portfolioModal5" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="../../../assets/img/profile.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-2 portfolio-item cell_space">
-            <a class="portfolio-link" href="#portfolioModal6" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="../../../assets/img/profile.png" alt="">
-            </a>
-          </div>
-        </div>
+    <section id="portfolio" >
+     
+     <div class="container" role="tablist">
+        <h2 class="text-center" id="titulo">Parking</h2>
+        <hr class="star-primary" id="titulo1"> 
 
-        <!--
-          fin de listas quemadas
-        -->
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#home" role="tab" aria-controls="home">Floor 1 Motorcycles</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#profile" role="tab" aria-controls="profile">Floor 2 Cars</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#messages" role="tab" aria-controls="messages">Floor 3 Cars</a>
+        </li>
+      </ul>
+
+
+
+      <div class="tab-content">
+
+    <!--          Inicio primer tab    -->     
+
+        <div class="tab-pane active" id="home" role="tabpanel">
+
+        <div class="tab-pane active row" id="moto" role="tabpanel" data-toggle="modal" data-target="#myModal">
+
+          <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/moto_yellow.png" alt="" height="230" width="80">
+              <h3 class="placa"><span class="badge badge-pill badge-info">RJN34D</span></h3>
+            </a>
+          </div>
+
+          <div id="vertical-bar"></div>   <!--          Separador        -->        
+
+         <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/moto_purple.png" alt="" height="230" width="80">
+              <h3 class="placa"><span class="badge badge-pill badge-info">HSG13C</span></h3>
+            </a>
+          </div>
+
+          <div id="vertical-bar"></div>   <!--          Separador        -->    
+
+          <div class="col-md-2 portfolio-item cell_space">  
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/moto_red.png" alt="" height="230" width="80">
+              <h3 class="placa"><span class="badge badge-pill badge-info">AFS12D</span></h3>
+            </a>
+          </div>
+
+          <div id="vertical-bar"></div>   <!--          Separador        -->    
+
+          <div class="col-md-2 portfolio-item cell_space">  
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/moto_red.png" alt="" height="230" width="80">
+              <h3 class="placa"><span class="badge badge-pill badge-info">BSG25D</span></h3>
+            </a>
+          </div>
+
+          <div id="vertical-bar"></div>   <!--          Separador        -->    
+
+          <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/moto_yellow.png" alt="" height="230" width="80">
+              <h3 class="placa"><span class="badge badge-pill badge-info">FAD23D</span></h3>
+            </a>
+          </div>
+
+
+          <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/moto_yellow.png" alt="" height="230" width="80">
+              <h3 class="placa"><span class="badge badge-pill badge-info">FSG32D</span></h3>
+            </a>
+          </div>
+
+          <div id="vertical-bar"></div>   <!--          Separador        -->  
+
+          <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/moto_yellow.png" alt="" height="230" width="80">
+              <h3 class="placa"><span class="badge badge-pill badge-info">GDH34D</span></h3>
+            </a>
+          </div>
+
+          <div id="vertical-bar"></div>   <!--          Separador        -->  
+
+          <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/moto_yellow.png" alt="" height="230" width="80">
+              <h3 class="placa"><span class="badge badge-pill badge-info">GDV36D</span></h3>
+            </a>
+          </div>
+
+          <div id="vertical-bar"></div>   <!--          Separador        -->  
+
+          <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/moto_yellow.png" alt="" height="230" width="80">
+              <h3 class="placa"><span class="badge badge-pill badge-info">OIJ65D</span></h3>
+            </a>
+          </div>
+
+          <div id="vertical-bar"></div>   <!--          Separador        -->  
+
+         <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/moto_yellow.png" alt="" height="230" width="80">
+              <h3 class="placa"><span class="badge badge-pill badge-info">GSF27D</span></h3>
+            </a>
+          </div>          
+        </div>
       </div>
+
+    <!--          Fin primer tab     -->  
+
+        <div class="tab-pane" id="profile" role="tabpanel">
+          
+          <!---         Inicio segundo tab -->
+
+        <div class="tab-pane active" id="home" role="tabpanel">
+
+        <div class="tab-pane active row" id="moto" role="tabpanel" data-toggle="modal" data-target="#myModal">
+
+          <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/car_blue.png" alt="" height="230" width="80" id="carimage">
+              <h3 class="placacar"><span class="badge badge-pill badge-info">HSG547</span></h3>
+            </a>
+          </div>
+
+          <div id="vertical-bar"></div>   <!--          Separador        -->        
+
+         <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/car_yellow.png" alt="" height="230" width="80" id="carimage">
+              <h3 class="placacar"><span class="badge badge-pill badge-info">VFD635</span></h3>
+            </a>
+          </div>
+
+          <div id="vertical-bar"></div>   <!--          Separador        -->    
+
+         <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/car_red.png" alt="" height="230" width="80" id="carimage">
+              <h3 class="placacar"><span class="badge badge-pill badge-info">GSF454</span></h3>
+            </a>
+          </div>
+
+          <div id="vertical-bar"></div>   <!--          Separador        -->    
+
+         <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/car_green.png" alt="" height="230" width="80" id="carimage">
+              <h3 class="placacar"><span class="badge badge-pill badge-info">OIU675</span></h3>
+            </a>
+          </div>
+
+          <div id="vertical-bar"></div>   <!--          Separador        -->    
+
+         <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/car_blue.png" alt="" height="230" width="80" id="carimage">
+              <h3 class="placacar"><span class="badge badge-pill badge-info">ACV342</span></h3>
+            </a>
+          </div>
+
+
+         <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/car_red.png" alt="" height="230" width="80" id="carimage">
+              <h3 class="placacar"><span class="badge badge-pill badge-info">VGF567</span></h3>
+            </a>
+          </div>
+
+          <div id="vertical-bar"></div>   <!--          Separador        -->  
+
+         <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/car_blue.png" alt="" height="230" width="80" id="carimage">
+              <h3 class="placacar"><span class="badge badge-pill badge-info">HGF456</span></h3>
+            </a>
+          </div>
+
+          <div id="vertical-bar"></div>   <!--          Separador        -->  
+
+          <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/car_purple.png" alt="" height="230" width="80" id="carimage">
+              <h3 class="placacar"><span class="badge badge-pill badge-info">ABV465</span></h3>
+            </a>
+          </div>
+
+          <div id="vertical-bar"></div>   <!--          Separador        -->  
+
+          <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/car_red.png" alt="" height="230" width="80" id="carimage">
+              <h3 class="placacar"><span class="badge badge-pill badge-info">AVD435</span></h3>
+            </a>
+          </div>
+
+          <div id="vertical-bar"></div>   <!--          Separador        -->  
+
+         <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/car_yellow.png" alt="" height="230" width="80" id="carimage">
+              <h3 class="placacar"><span class="badge badge-pill badge-info">OHB543</span></h3>
+            </a>
+          </div>  
+
+        </div>
+
+      </div>
+
+       <!--  Fin segundo tab  -->
+
+
+        </div>
+
+        <div class="tab-pane" id="messages" role="tabpanel">
+
+        <!---         Inicio tercer tab -->
+
+        <div class="tab-pane active" id="home" role="tabpanel">
+
+        <div class="tab-pane active row" id="moto" role="tabpanel" data-toggle="modal" data-target="#myModal">
+
+          <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/car_blue.png" alt="" height="230" width="80" id="carimage">
+              <h3 class="placacar"><span class="badge badge-pill badge-info">PBZ143</span></h3>
+            </a>
+          </div>
+
+          <div id="vertical-bar"></div>   <!--          Separador        -->        
+
+         <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/car_yellow.png" alt="" height="230" width="80" id="carimage">
+              <h3 class="placacar"><span class="badge badge-pill badge-info">HGF654</span></h3>
+            </a>
+          </div>
+
+          <div id="vertical-bar"></div>   <!--          Separador        -->    
+
+         <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/car_red.png" alt="" height="230" width="80" id="carimage">
+              <h3 class="placacar"><span class="badge badge-pill badge-info">PUH873</span></h3>
+            </a>
+          </div>
+
+          <div id="vertical-bar"></div>   <!--          Separador        -->    
+
+         <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/car_green.png" alt="" height="230" width="80" id="carimage">
+              <h3 class="placacar"><span class="badge badge-pill badge-info">HBR873</span></h3>
+            </a>
+          </div>
+
+          <div id="vertical-bar"></div>   <!--          Separador        -->    
+
+         <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/car_blue.png" alt="" height="230" width="80" id="carimage">
+              <h3 class="placacar"><span class="badge badge-pill badge-info">AFC453</span></h3>
+            </a>
+          </div>
+
+
+         <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/car_red.png" alt="" height="230" width="80" id="carimage">
+              <h3 class="placacar"><span class="badge badge-pill badge-info">LKM083</span></h3>
+            </a>
+          </div>
+
+          <div id="vertical-bar"></div>   <!--          Separador        -->  
+
+         <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/car_blue.png" alt="" height="230" width="80" id="carimage">
+              <h3 class="placacar"><span class="badge badge-pill badge-info">UYT678</span></h3>
+            </a>
+          </div>
+
+          <div id="vertical-bar"></div>   <!--          Separador        -->  
+
+          <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/car_purple.png" alt="" height="230" width="80" id="carimage">
+              <h3 class="placacar"><span class="badge badge-pill badge-info">FAR324</span></h3>
+            </a>
+          </div>
+
+          <div id="vertical-bar"></div>   <!--          Separador        -->  
+
+          <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/car_red.png" alt="" height="230" width="80" id="carimage">
+              <h3 class="placacar"><span class="badge badge-pill badge-info">AYB653</span></h3>
+            </a>
+          </div>
+
+          <div id="vertical-bar"></div>   <!--          Separador        -->  
+
+         <div class="col-md-2 portfolio-item cell_space">
+            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="mg-fluid" src="../../../assets/img/car_yellow.png" alt="" height="230" width="80" id="carimage">
+              <h3 class="placacar"><span class="badge badge-pill badge-info">RJN34D</span></h3>
+            </a>
+          </div>
+
+
+       <!--  Fin tercer tab  -->
+  
+
+        </div>
+
+      </div>
+
+
+         </div>
+
+      </div>
+
+      <script>
+        $(function () {
+          $('#myTab a:last').tab('show')
+        })
+      </script>
+
+        <br>
+
+       
+      </div>  
+
     </section>
+
+
