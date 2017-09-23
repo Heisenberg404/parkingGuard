@@ -7,24 +7,80 @@
     <div class="modal-content" id="modalpay">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" >Insert Vehycle</h4>
+        <h4 class="modal-title" >Insert Vehycle</h4>      
       </div>
 
-      <div class="form-group row" style="margin-top: 10px">
-        <label for="example-text-input" class="col-2 col-form-label" style="margin-left: 20px">License</label>
-        <div class="col-8">
-          <input class="form-control" type="text" value="" id="licesetext">
+      <ul class="nav nav-tabs" role="tablist" id="tab_day">
+        <li class="nav-item">
+          <a class="nav-link active" href="#day" role="tab" data-toggle="tab">Day</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#month" role="tab" data-toggle="tab">Month</a>
+        </li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+
+        <div role="tabpanel" class="tab-pane active"  id="day">  
+
+          <div class="form-group row" style="margin-top: 10px">
+            <label for="example-text-input" class="col-2 col-form-label" style="margin-left: 20px">License</label>
+            <div class="col-8">
+              <input class="form-control" type="text" value="" id="licesetext">
+            </div>
+          </div>
+
+          <div class="form-group row" style="margin-top: 10px">
+            <label for="example-text-input" class="col-2 col-form-label" style="margin-left: 20px">Cell</label>
+            <div class="col-8">
+              <input class="form-control" id="disabledInput" type="text" placeholder="1" style="text-align: center;" disabled>
+            </div>
+          </div>
+
         </div>
+
+
+        <div role="tabpanel" class="tab-pane fade" id="month">
+
+          <div class="form-group row" style="margin-top: 10px">
+            <label for="example-text-input" class="col-2 col-form-label" style="margin-left: 20px">Name</label>
+            <div class="col-8">
+              <input class="form-control" type="text" value="" id="nametext">
+            </div>
+          </div>
+
+          <div class="form-group row" style="margin-top: 10px">
+              <label for="example-text-input" class="col-2 col-form-label" style="margin-left: 20px">Id 
+              </label>
+              <div class="col-8">
+                <input class="form-control" type="text" value="" id="idtext">
+              </div>
+          </div>
+
+           <div class="form-group row" style="margin-top: 10px">
+            <label for="example-text-input" class="col-2 col-form-label" style="margin-left: 20px">License</label>
+            <div class="col-8">
+              <input class="form-control" type="text" value="" id="licesetext">
+            </div>
+          </div>
+
+         <div class="form-group row" style="margin-top: 10px">
+            <label for="example-date-input" class="col-2 col-form-label" style="margin-left: 20px">Date </label >          
+              <input class="form-control" type="date" value="" id="example-date-input" style="width: 322px;
+              margin-left: 14px;"/>    
+          </div>
+
+
+          <div class="form-group row" style="margin-top: 10px">
+            <label for="example-date-input" class="col-2 col-form-label" style="margin-left: 20px">Date </label >          
+              <input class="form-control" type="date" value="" id="example-date-input" style="width: 322px;
+              margin-left: 14px;"/>    
+          </div>
+
+        </div>   
+
       </div>
-
-
-       <div class="form-group row" style="margin-top: 10px">
-        <label for="example-text-input" class="col-2 col-form-label" style="margin-left: 20px">Cell</label>
-        <div class="col-8">
-          <input class="form-control" id="disabledInput" type="text" placeholder="1" style="text-align: center;" disabled>
-        </div>
-      </div>
-
 
       <div class="modal-footer">
 
@@ -37,6 +93,7 @@
 </div>
 
 
+    <!--         SECCION TABLA    -->  
 
     <section id="portfolio" >
      
@@ -531,5 +588,4 @@
       </div>  
 
     </section>
-
 
