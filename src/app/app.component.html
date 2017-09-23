@@ -1,4 +1,10 @@
-<app-navigation></app-navigation>
-<app-header></app-header>
+<app-navigation
+  (showLoginOut)="showLoginForm($event)"></app-navigation>
+<app-header *ngIf="!showLogin"></app-header>
+<div class="jumbotron jumbotron-fluid jumbo-header" *ngIf="showLogin">
+  <div class="container">
+    <app-login></app-login>
+  </div>
+</div>
 <app-table> </app-table>
 <app-footer></app-footer>
