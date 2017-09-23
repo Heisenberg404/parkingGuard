@@ -1,14 +1,13 @@
 
 
 body {
-    background: #eee !important;    
+    background: #eee !important;
 }
 
-.wrapper {  
-    margin-top: 80px;
-  margin-bottom: 80px;  
+.wrapper {
+  margin-top: -4%;
   padding-top: 80px;
-
+  margin-bottom: -5%;
 }
 
 .form-signin-heading{
@@ -20,9 +19,8 @@ body {
   max-width: 380px;
   padding: 15px 35px 45px;
   margin: 0 auto;
-  background-color: #fff;
-  border: 1px solid rgba(0,0,0,0.1);  
-
+  background-color: #18bc9c;
+}
   .form-signin-heading,
     .checkbox {
       margin-bottom: 30px;
@@ -56,4 +54,4 @@ body {
       border-top-left-radius: 0;
       border-top-right-radius: 0;
     }
-}
+
