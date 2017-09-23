@@ -9,6 +9,7 @@ import { ParkingApiService} from './services/parkingApi.service';
 import {HttpModule} from '@angular/http';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PriceComponent } from './components/price/price.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FooterComponent } from './components/footer/footer.component';
     TableComponent,
     NavigationComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    PriceComponent
   ],
   imports: [
     BrowserModule,
