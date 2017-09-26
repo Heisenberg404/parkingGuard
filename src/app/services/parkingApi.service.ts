@@ -4,9 +4,9 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ParkingApiService {
-
+  baseUrl = 'http://localhost:54337/api/';
   users: any;
-
+  loggedUser: any;
 
   constructor(private http: Http) { }
 
@@ -19,16 +19,16 @@ export class ParkingApiService {
     this.users = obj;
     console.log(obj);
     return this.users;
-    /*
-    let query = `?q=${parameter}&type=artist`;
-    let url = this.urlSearch + query;
-    let headers = new Headers();
-    headers.append('authorization', 'Bearer BQBs_8ksb_EeRief6YyJIU42reUXKvJWASUyzuKq9YzA2mTHaqTQ9gFu6ujc2PKxaf2Qfz9DLOEOWy6nabyIqw');
-    return this.http.get(url, {headers} ).map( res => {
-      // console.log(res.json().artists);
-      this.artists = res.json().artists.items;
-      console.log(this.artists);
-      // return this.artists;
-    });*/
+  }
+
+  checkUser(user: any) {
+    const query = `Users/`
+    const url = this.baseUrl + query;
+    console.log(user);
+    return this.http.post(url, user).map(res => {
+      this.loggedUser = res.json();
+      console.log('usuario logueado' + this.loggedUser);
+    });
+
   }
 }
