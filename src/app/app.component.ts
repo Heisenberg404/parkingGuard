@@ -7,8 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   showLogin = false;
+  showReport = false;
+
   showLoginForm(event) {
     this.showLogin = event;
+  }
+  showReportForm(event) {
+    this.showReport = event;
   }
 
 }

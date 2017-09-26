@@ -10,6 +10,7 @@ import {HttpModule} from '@angular/http';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PriceComponent } from './components/price/price.component';
+import { ReportsComponent } from './components/reports/reports.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PriceComponent } from './components/price/price.component';
     NavigationComponent,
     HeaderComponent,
     FooterComponent,
-    PriceComponent
+    PriceComponent,
+    ReportsComponent
   ],
   imports: [
     BrowserModule,
