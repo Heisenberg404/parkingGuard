@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Http, Headers} from '@angular/http';
+import {Http, Headers, RequestOptions} from '@angular/http';
+import {BrowserModule} from '@angular/platform-browser';
 import 'rxjs/add/operator/map';
+
 
 @Injectable()
 export class ParkingApiService {
@@ -22,13 +24,15 @@ export class ParkingApiService {
   }
 
   checkUser(user: any) {
-    const query = `Users/`
+    
+    const query = `Users`
     const url = this.baseUrl + query;
-    console.log(user);
-    return this.http.post(url, user).map(res => {
-      this.loggedUser = res.json();
-      console.log('usuario logueado' + this.loggedUser);
-    });
-
+    let headers = new Headers({'Content-Type' : 'application/json'});
+    let options = new RequestOptions({headers : headers});
+    //var res = this.http.post(url, user);
+    console.log("request");
+    console.log(JSON.stringify(user));
+    //this.http.post(url, JSON.stringify(user), options).subscribe(res => console.log("response is: "+res.json));
+    return this.http.post(url, JSON.stringify(user), options).map(res => console.log("response is: "+res));
   }
 }
