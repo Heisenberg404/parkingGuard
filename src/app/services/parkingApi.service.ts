@@ -22,7 +22,7 @@ export class ParkingApiService {
   }
 
   checkUser(user: any) {
-    const query = `Users/`
+    const query = `Users`
     const url = this.baseUrl + query;
     console.log(user);
     return this.http.post(url, user).map(res => {
