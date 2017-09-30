@@ -22,13 +22,15 @@ export class ParkingApiService {
   }
 
   checkUser(user: any) {
-    const query = `Users`
-    const url = this.baseUrl + query;
-    console.log(user);
-    return this.http.post(url, user).map(res => {
-      this.loggedUser = res.json();
-      console.log('usuario logueado' + this.loggedUser);
-    });
 
+
+    const query = `Users`
+    let headers = new Headers({'Content-Type' : 'application/json'});
+    let options = new RequestOptions({headers : headers});
+    //var res = this.http.post(url, user);
+    console.log("request");
+    console.log(JSON.stringify(user));
+    //this.http.post(url, JSON.stringify(user), options).subscribe(res => console.log("response is: "+res.json));
+    return this.http.post(url, JSON.stringify(user), options).map(res => console.log("response is: "+res));
   }
 }

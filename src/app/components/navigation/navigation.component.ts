@@ -8,7 +8,9 @@ import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 export class NavigationComponent implements OnInit {
 
   showLogin = false;
+  showReport = false;
   @Output() showLoginOut = new EventEmitter();
+  @Output() showReportOut = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
@@ -17,6 +19,11 @@ export class NavigationComponent implements OnInit {
   showLoginForm(){
     this.showLogin = true;
     this.showLoginOut.emit(this.showLogin);
+  }
+
+  showReportForm(){
+    this.showReport = true;
+    this.showReportOut.emit(this.showReport);
   }
 
 }

@@ -9,7 +9,8 @@ import { ParkingApiService} from '../../services/parkingApi.service';
 export class LoginComponent implements OnInit {
   user: any = {
     username : '',
-    password : ''
+    pass : '',
+    operacion : false
   };
 
   constructor(private _parkingApiService: ParkingApiService) { }
@@ -22,6 +23,8 @@ export class LoginComponent implements OnInit {
   this._parkingApiService.getUsers(this.user).subscribe();
   }
   checkUser () {
+    console.log("valor del usuario");
+    console.log(this.user);
     this._parkingApiService.checkUser(this.user);
   }
 
