@@ -8,10 +8,13 @@ import { ParkingApiService} from '../../services/parkingApi.service';
 })
 export class LoginComponent implements OnInit {
   user: any = {
+    id : '',
     username : '',
     pass : '',
     operacion : false
   };
+
+  loggedUSer: any = null;
 
   constructor(private _parkingApiService: ParkingApiService) { }
 
@@ -19,13 +22,14 @@ export class LoginComponent implements OnInit {
   }
 
   getUser () {
-
-  this._parkingApiService.getUsers(this.user).subscribe();
+    this._parkingApiService.getUsers(this.user).subscribe();
   }
   checkUser () {
-    console.log("valor del usuario");
-    console.log(this.user);
-    this._parkingApiService.checkUser(this.user);
+    this._parkingApiService.checkUser(this.user).subscribe(result => {
+      console.log('resultado: ' + result);
+      this.loggedUSer = result;
+      console.log('el usuario en sesion es: ' + this.loggedUSer.username + 'con id: ' + this.loggedUSer.id);
+    });
   }
 
 }

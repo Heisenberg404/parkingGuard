@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
-import {Http, Headers} from '@angular/http';
+import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ParkingApiService {
-  baseUrl = 'http://localhost:54337/api/';
+  // baseUrl = 'http://localhost:54337/api/';
+  baseUrl = 'http://parkingapp.apphb.com/api/';
   users: any;
+  data: any = null;
   loggedUser: any;
 
   constructor(private http: Http) { }
@@ -22,15 +24,13 @@ export class ParkingApiService {
   }
 
   checkUser(user: any) {
-
-
-    const query = `Users`
-    let headers = new Headers({'Content-Type' : 'application/json'});
-    let options = new RequestOptions({headers : headers});
-    //var res = this.http.post(url, user);
-    console.log("request");
+    const query = `Users`;
+    const url  = this.baseUrl + query;
+    const headers = new Headers({'Content-Type' : 'application/json'});
+    const options = new RequestOptions({headers : headers});
+    console.log('request');
     console.log(JSON.stringify(user));
-    //this.http.post(url, JSON.stringify(user), options).subscribe(res => console.log("response is: "+res.json));
-    return this.http.post(url, JSON.stringify(user), options).map(res => console.log("response is: "+res));
+    return this.http.post(url, JSON.stringify(user), options).map(res => res.json());
+
   }
 }

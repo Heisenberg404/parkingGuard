@@ -1,5 +1,5 @@
  <div class="wrapper">
-    <form class="form-signin">
+    <form class="form-signin" *ngIf="!loggedUSer">
       <input type="text" [(ngModel)]="user.username" class="form-control" name="username" placeholder="Username" autofocus="" />
       <br>
       <input type="password" class="form-control" [(ngModel)]="user.pass" name="password" placeholder="Password" required=""/>
@@ -8,6 +8,11 @@
         <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
       </label>
       <span class="add-on"><i class="icon-user icon-white"></i></span>
-      <button  scr= "" class="btn btn-lg btn-primary btn-block" (click)="checkUser(user)" >Login</button>
+      <button class="btn btn-lg btn-primary btn-block" (click)="checkUser(user)" >Login</button>
     </form>
+    <div *ngIf="loggedUSer">
+      <img src="../../../assets/img/userIcon.png" height="100" width="100"/>
+      <span>{{loggedUSer.username}}</span>
+    </div>
   </div>
+
