@@ -26,14 +26,14 @@
           <div class="form-group row" style="margin-top: 10px">
             <label for="example-text-input" class="col-2 col-form-label" style="margin-left: 20px">License</label>
             <div class="col-8">
-              <input class="form-control" type="text" value="" id="licesetext">
+              <input class="form-control" type="text" value="{{recordSelected.license}}" id="licesetextMoto">
             </div>
           </div>
 
           <div class="form-group row" style="margin-top: 10px">
             <label for="example-text-input" class="col-2 col-form-label" style="margin-left: 20px">Cell</label>
             <div class="col-8">
-              <input class="form-control" id="disabledInput" type="text" placeholder="1" style="text-align: center;"
+              <input class="form-control" id="disabledInput" type="text" placeholder="{{recordSelected.numCell}}" style="text-align: center;"
                      disabled>
             </div>
           </div>
@@ -125,7 +125,7 @@
 
           <!-- Piso 1 -->
           <div class="col-md-2 portfolio-item cell_space" *ngFor="let value of filterTableValues('1')">
-              <a class="portfolio-link" href="#portfolioModal1" (click)='alerta(value.id)' data-toggle="modal">
+              <a class="portfolio-link" href="#portfolioModal1" (click)='setRecordSelected(value)' data-toggle="modal">
                 <div class="caption">
                   <div class="caption-content">
                     <i class="fa fa-search-plus fa-3x"></i>

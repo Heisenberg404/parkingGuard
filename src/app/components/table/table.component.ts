@@ -8,6 +8,12 @@ import { ParkingApiService} from '../../services/parkingApi.service';
 })
 export class TableComponent implements OnInit {
   tableValues: any;
+  recordSelected = {
+        'id': 0,
+        'numCell': '',
+        'state': '',
+        'license': ''
+  };
   DISP = 'DISP';
   OCUP = 'OCUP';
   ALQU = 'ALQU';
@@ -31,8 +37,8 @@ export class TableComponent implements OnInit {
   removeWhiteSpace(item) {
     item.state = item.state.trim();
   }
-  alerta(item) {
-    alert(item);
+  setRecordSelected(item) {
+    this.recordSelected = item;
   }
 
 }
