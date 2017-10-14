@@ -33,4 +33,11 @@ export class ParkingApiService {
     return this.http.post(url, JSON.stringify(user), options).map(res => res.json());
 
   }
+
+  getAllTablePark() {
+    const query = 'ParkCells';
+    const  url = this.baseUrl + query;
+    return this.http.get(url).map(res => res.json());
+  }
+
 }
