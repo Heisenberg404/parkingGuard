@@ -17,8 +17,9 @@ export class TableComponent implements OnInit {
   };
   itemToSave = {
     'license': '',
-    'idcell': '',
-    'idprice': 0
+    'idprice': 0,
+    'idCell': ''
+    
   };
 
   DISP = 'DISP';
@@ -52,7 +53,7 @@ export class TableComponent implements OnInit {
     console.log('record selected');
     console.log(this.recordSelected);
     this.itemToSave.license = this.recordSelected.license;
-    this.itemToSave.idcell = this.recordSelected.id;
+    this.itemToSave.idCell = this.recordSelected.id;
     this.itemToSave.idprice =  Number(this.recordSelected.numCell.substring(1, 0));
     console.log('item to save');
     console.log(this.itemToSave);
