@@ -26,7 +26,7 @@
           <div class="form-group row" style="margin-top: 10px">
             <label for="example-text-input" class="col-2 col-form-label" style="margin-left: 20px">License</label>
             <div class="col-8">
-              <input class="form-control" type="text" value="{{recordSelected.license}}" id="licesetextMoto">
+              <input class="form-control" type="text" value="{{recordSelected.license}}" [(ngModel)]="recordSelected.license" id="licesetextMoto">
             </div>
           </div>
 
@@ -59,22 +59,22 @@
           </div>
 
           <div class="form-group row" style="margin-top: 10px">
-            <label for="example-text-input" class="col-2 col-form-label" style="margin-left: 20px">License</label>
+            <label for="licesetext" class="col-2 col-form-label" style="margin-left: 20px">License</label>
             <div class="col-8">
               <input class="form-control" type="text" value="" id="licesetext">
             </div>
           </div>
 
           <div class="form-group row" style="margin-top: 10px">
-            <label for="example-date-input" class="col-2 col-form-label" style="margin-left: 20px">Date </label>
-            <input class="form-control" type="date" value="" id="example-date-input" style="width: 322px;
+            <label for="example-date-input-1" class="col-2 col-form-label" style="margin-left: 20px">Date </label>
+            <input class="form-control" type="date" value="" id="example-date-input-1" style="width: 322px;
               margin-left: 14px;"/>
           </div>
 
 
           <div class="form-group row" style="margin-top: 10px">
-            <label for="example-date-input" class="col-2 col-form-label" style="margin-left: 20px">Date </label>
-            <input class="form-control" type="date" value="" id="example-date-input" style="width: 322px;
+            <label for="example-date-input-2" class="col-2 col-form-label" style="margin-left: 20px">Date </label>
+            <input class="form-control" type="date" value="" id="example-date-input-2" style="width: 322px;
               margin-left: 14px;"/>
           </div>
 
@@ -84,7 +84,7 @@
 
       <div class="modal-footer">
 
-        <button type="button" class="btn btn-primary" style="width: 104px; margin-left: 204px; ">Guardar</button>
+        <button type="button" class="btn btn-primary" style="width: 104px; margin-left: 204px; " (click)="inNewVeh()">Guardar</button>
         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
       </div>
     </div>
@@ -144,7 +144,7 @@
       <div class="tab-pane" id="cars1" role="tabpanel">
         <div class="tab-pane active row" id="tab-pane-cars-1" role="tabpanel" data-toggle="modal" data-target="#myModal">
           <div class="col-md-2 portfolio-item cell_space marginTop-2-porcent" *ngFor="let value of filterTableValues('2')">
-              <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+              <a class="portfolio-link" href="#portfolioModal1" (click)='setRecordSelected(value)' data-toggle="modal">
                 <div class="caption">
                   <div class="caption-content">
                     <i class="fa fa-search-plus fa-3x"></i>
@@ -163,7 +163,7 @@
       <div class="tab-pane" id="cars2" role="tabpanel">
         <div class="tab-pane active row" id="tab-pane-cars-2" role="tabpanel" data-toggle="modal" data-target="#myModal">
           <div class="col-md-2 portfolio-item cell_space marginTop-2-porcent" *ngFor="let value of filterTableValues('3')">
-            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+            <a class="portfolio-link" href="#portfolioModal1" (click)='setRecordSelected(value)' data-toggle="modal">
               <div class="caption">
                 <div class="caption-content">
                   <i class="fa fa-search-plus fa-3x"></i>

@@ -8,12 +8,19 @@ import { ParkingApiService} from '../../services/parkingApi.service';
 })
 export class TableComponent implements OnInit {
   tableValues: any;
+
   recordSelected = {
-        'id': 0,
+        'id': '',
         'numCell': '',
         'state': '',
         'license': ''
   };
+  itemToSave = {
+    'license': '',
+    'idCell': '',
+    'idPrice': 0
+  };
+
   DISP = 'DISP';
   OCUP = 'OCUP';
   ALQU = 'ALQU';
@@ -39,6 +46,21 @@ export class TableComponent implements OnInit {
   }
   setRecordSelected(item) {
     this.recordSelected = item;
+  }
+
+  inNewVeh() {
+    console.log('record selected');
+    console.log(this.recordSelected);
+    this.itemToSave.license = this.recordSelected.license;
+    this.itemToSave.idCell = this.recordSelected.id;
+    this.itemToSave.idPrice =  Number(this.recordSelected.numCell.substring(1, 0));
+    console.log('item to save');
+    console.log(this.itemToSave);
+    this._parkingApiService.saveItem(this.itemToSave).subscribe(result => {
+      console.log('guardado !');
+      console.log(result);
+    });
+
   }
 
 }
