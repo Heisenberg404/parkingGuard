@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ParkingApiService {
-  //baseUrl = 'http://localhost:54337/api/';
+  // baseUrl = 'http://localhost:54337/api/';
   baseUrl = 'http://parkingapp.apphb.com/api/';
   users: any;
   data: any = null;

@@ -19,7 +19,6 @@ export class TableComponent implements OnInit {
     'license': '',
     'idprice': 0,
     'idCell': ''
-    
   };
 
   DISP = 'DISP';
@@ -29,11 +28,7 @@ export class TableComponent implements OnInit {
 
 
   ngOnInit() {
-    this._parkingApiService.getAllTablePark().subscribe(result => {
-      result.forEach(this.removeWhiteSpace);
-      this.tableValues = result;
-      console.log(this.tableValues);
-    });
+    this.loadDataTable();
   }
 
   filterTableValues(nFloor) {
@@ -59,9 +54,16 @@ export class TableComponent implements OnInit {
     console.log(this.itemToSave);
     this._parkingApiService.saveItem(this.itemToSave).subscribe(result => {
       console.log('guardado !');
+      this.loadDataTable();
       console.log(result);
     });
-
   }
 
+  loadDataTable() {
+    this._parkingApiService.getAllTablePark().subscribe(result => {
+      result.forEach(this.removeWhiteSpace);
+      this.tableValues = result;
+      console.log(this.tableValues);
+    });
+  }
 }
