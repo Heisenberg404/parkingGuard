@@ -48,4 +48,12 @@ export class ParkingApiService {
     return this.http.post(url, JSON.stringify(vehicle), options).map(res => res.json());
   }
 
+  outVehicle (vehicleOut: any) {
+    const query = 'Records/' + vehicleOut.idCell;
+    const url = this.baseUrl + query;
+    const headers = new Headers({'Content-Type' : 'application/json'});
+    const options = new RequestOptions({headers : headers});
+    return this.http.put(url, JSON.stringify(vehicleOut), options).map(res => res.json());
+  }
+
 }

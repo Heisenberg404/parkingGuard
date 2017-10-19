@@ -66,4 +66,21 @@ export class TableComponent implements OnInit {
       console.log(this.tableValues);
     });
   }
+
+  outVehicle() {
+    const itemOut = {
+      'license': '',
+      'idprice': 0,
+      'idCell': ''
+    };
+    itemOut.license = this.recordSelected.license;
+    itemOut.idCell = this.recordSelected.id;
+    itemOut.idprice =  Number(this.recordSelected.numCell.substring(1, 0));
+
+    this._parkingApiService.outVehicle(itemOut).subscribe(result => {
+      console.log('salio!!');
+      this.loadDataTable();
+      console.log(result);
+    });
+  }
 }

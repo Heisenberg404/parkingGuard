@@ -6,7 +6,7 @@
     <div class="modal-content" id="modalpay">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Insert Vehycle</h4>
+        <h4 class="modal-title">Vehycle Options</h4>
       </div>
 
       <ul class="nav nav-tabs" role="tablist" id="tab_day">
@@ -86,10 +86,12 @@
 
       <div class="modal-footer">
 
-        <button type="button" class="btn btn-primary" data-dismiss="modal" style="width: 104px; margin-left: 204px; " (click)="inNewVeh()">
-          Guardar
+        <button type="button" class="btn btn-info btn-modal" data-dismiss="modal" *ngIf="recordSelected.state === 'DISP'" (click)="inNewVeh()">
+          Ingresar
         </button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger btn-modal" data-dismiss="modal" *ngIf="recordSelected.state === 'OCUP'"  (click)="outVehicle()">
+          Salir
+        </button>
       </div>
     </div>
 
