@@ -16,12 +16,12 @@ export class NavigationComponent implements OnInit {
   ngOnInit() {
   }
 
-  showLoginForm(){
+  showLoginForm() {
     this.showLogin = true;
     this.showLoginOut.emit(this.showLogin);
   }
 
-  showReportForm(){
+  showReportForm() {
     this.showReport = true;
     this.showReportOut.emit(this.showReport);
   }

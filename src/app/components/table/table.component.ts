@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { ParkingApiService} from '../../services/parkingApi.service';
 
 @Component({
@@ -8,7 +8,8 @@ import { ParkingApiService} from '../../services/parkingApi.service';
 })
 export class TableComponent implements OnInit {
   tableValues: any;
-
+  @Input('loader') loader: boolean;
+  @Output() loaderChanged = new EventEmitter();
   recordSelected = {
         'id': '',
         'numCell': '',
@@ -24,7 +25,21 @@ export class TableComponent implements OnInit {
   DISP = 'DISP';
   OCUP = 'OCUP';
   ALQU = 'ALQU';
-  constructor(private _parkingApiService: ParkingApiService) { }
+
+  showLoader() {
+    this.loader = true;
+    this.loaderChanged.emit(this.loader);
+  }
+
+  hideLoader() {
+    this.loader = false;
+    this.loaderChanged.emit(this.loader);
+  }
+
+
+  constructor(private _parkingApiService: ParkingApiService) {
+
+  }
 
 
   ngOnInit() {

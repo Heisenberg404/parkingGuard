@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   showLogin = false;
   showReport = false;
+  showLoader = false;
 
   showLoginForm(event) {
     this.showLogin = event;
@@ -16,4 +17,11 @@ export class AppComponent {
     this.showReport = event;
   }
 
+  changeValueLoader(event) {
+    if (event) {
+      this.showLoader = true;
+    }else {
+      this.showLoader = false;
+    }
+  }
 }

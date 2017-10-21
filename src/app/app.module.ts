@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PriceComponent } from './components/price/price.component';
 import { ReportsComponent } from './components/reports/reports.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ReportsComponent } from './components/reports/reports.component';
     HeaderComponent,
     FooterComponent,
     PriceComponent,
-    ReportsComponent
+    ReportsComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
