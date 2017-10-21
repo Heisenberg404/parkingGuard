@@ -8,7 +8,7 @@
 </div>
 <app-reports *ngIf="showReport"> </app-reports>
 <app-loader *ngIf="showLoader"></app-loader>
-<app-table [loader]="this.showLoader"></app-table>
+<app-table [loader]="this.showLoader" (loaderChanged)="changeLoader($event)"></app-table>
 <app-price> </app-price>
 <app-footer></app-footer>
 
