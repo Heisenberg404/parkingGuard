@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {ParkingApiService} from '../../services/parkingApi.service';
 
 @Component({
   selector: 'app-navigation',
@@ -7,13 +8,24 @@ import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
+  typeSelected: any;
+  dataTypeSelected: {
+    'id': 0,
+    'valueMinute': 0,
+    'idVehicleType': 0,
+    'valueMonth': 0
+  }
+  ;
+  listTypes: any;
   showLogin = false;
   showReport = false;
   @Output() showLoginOut = new EventEmitter();
   @Output() showReportOut = new EventEmitter();
-  constructor() { }
+
+  constructor(private _parkingApiService: ParkingApiService) { }
 
   ngOnInit() {
+    this.loadVehiclesTypes();
   }
 
   showLoginForm() {
@@ -25,5 +37,22 @@ export class NavigationComponent implements OnInit {
     this.showReport = true;
     this.showReportOut.emit(this.showReport);
   }
+
+  loadVehiclesTypes() {
+    this._parkingApiService.getTypesVehicles().subscribe(result => {
+      this.listTypes = result;
+      console.log('lista de vehiculos: ');
+      console.log(this.listTypes);
+    });
+  }
+
+  setVehiValues () {
+    if (this.typeSelected) {
+      this._parkingApiService.getPricesById(this.typeSelected.id).subscribe(result => {
+        this.dataTypeSelected = result;
+      });
+    }
+  }
+
 
 }
