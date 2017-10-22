@@ -13,7 +13,7 @@
     <app-price></app-price>
   </div>
   <div>
-    <app-table [loader]="this.showLoader" (loaderChanged)="changeLoader($event)"></app-table>
+    <app-table [loader]="this.showLoader" (loaderChanged)="changeLoader($event)" *ngIf="!showLoader"></app-table>
   </div>
 </div>
 <app-footer></app-footer>

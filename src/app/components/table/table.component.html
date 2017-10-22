@@ -1,6 +1,6 @@
-<a href="#" (click)
+<!--a href="#" (click)
   ="showLoader()">ShowLoad</a>
-<a href="#" (click)="hideLoader()">HideLoad</a>
+<a-- href="#" (click)="hideLoader()">HideLoad</a-->
 
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
@@ -141,7 +141,7 @@
                   <i class="fa fa-search-plus fa-3x"></i>
                 </div>
               </div>
-              <img class="mg-fluid"
+              <img class="mg-fluid width100"
                    [ngClass]="{'space-motor-disp' : value.state === DISP, 'space-motor-not-disp' : value.state === OCUP, 'space-motor-rent' : value.state === ALQU}"
                    alt="" id="motorcycleImage2">
               <h3 class="placa"><span class="badge badge-pill badge-info">{{value.license}}</span></h3>
@@ -162,7 +162,7 @@
                   <i class="fa fa-search-plus fa-3x"></i>
                 </div>
               </div>
-              <img class="mg-fluid"
+              <img class="mg-fluid width100"
                    [ngClass]="{'space-car-disp' : value.state === DISP, 'space-car-not-disp' : value.state === OCUP, 'space-car-rent' : value.state === ALQU}"
                    alt="" id="carimage2">
               <h3 class="placacar"><span class="badge badge-pill badge-info">{{value.license}}</span></h3>
@@ -183,7 +183,7 @@
                   <i class="fa fa-search-plus fa-3x"></i>
                 </div>
               </div>
-              <img class="mg-fluid"
+              <img class="mg-fluid width100"
                    [ngClass]="{'space-car-disp' : value.state === DISP, 'space-car-not-disp' : value.state === OCUP, 'space-car-rent' : value.state === ALQU}"
                    alt="" id="carimage3">
               <h3 class="placacar"><span class="badge badge-pill badge-info">{{value.license}}</span></h3>

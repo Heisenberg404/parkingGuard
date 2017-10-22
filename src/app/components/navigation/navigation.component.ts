@@ -9,13 +9,12 @@ import {ParkingApiService} from '../../services/parkingApi.service';
 export class NavigationComponent implements OnInit {
 
   typeSelected: any;
-  dataTypeSelected: {
+  dataTypeSelected = {
     'id': 0,
     'valueMinute': 0,
     'idVehicleType': 0,
     'valueMonth': 0
-  }
-  ;
+  };
   listTypes: any;
   showLogin = false;
   showReport = false;
@@ -49,9 +48,15 @@ export class NavigationComponent implements OnInit {
   setVehiValues () {
     if (this.typeSelected) {
       this._parkingApiService.getPricesById(this.typeSelected.id).subscribe(result => {
-        this.dataTypeSelected = result;
+        if (result) {
+          this.dataTypeSelected = result;
+        }
       });
     }
+  }
+
+  moveBottom() {
+    window.scrollTo(0, document.body.scrollHeight);
   }
 
 

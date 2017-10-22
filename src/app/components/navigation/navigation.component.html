@@ -20,7 +20,7 @@
         <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Prices</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+        <a class="nav-link" href="javascript:void(0)" (click)="moveBottom()">About</a>
       </li>
     </ul>
   </div>
@@ -59,8 +59,8 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" (click)="validateFields()">Save</button>
-        <button type="button" class="btn btn-danger " data-dismiss="modal" style="margin-bottom: 20px;">Close</button>
+        <button type="button" class="btn btn-info" (click)="validateFields()">Update</button>
+        <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
       </div>
       <span id="msjError">{{msjError}}</span>
     </div>
