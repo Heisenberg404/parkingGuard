@@ -7,7 +7,9 @@ import {ParkingApiService} from '../../services/parkingApi.service';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
-
+  msjError = '';
+  minutePrice: any;
+  monthPrice: any;
   typeSelected: any;
   dataTypeSelected = {
     'id': 0,
@@ -59,6 +61,13 @@ export class NavigationComponent implements OnInit {
     window.scrollTo(0, document.body.scrollHeight);
   }
 
+ validateFields () {
+    if (!/^[0-9]+$/.test(this.minutePrice)) {
+      this.msjError = 'el campo minuto solo acepta enteros';
+    }else {
+      this.msjError = '';
+    }
+  }
   updatePrice() {
     console.log(this.dataTypeSelected);
     if (this.dataTypeSelected) {
