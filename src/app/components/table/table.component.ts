@@ -76,9 +76,11 @@ export class TableComponent implements OnInit {
 
   loadDataTable() {
     this._parkingApiService.getAllTablePark().subscribe(result => {
+      this.showLoader();
       result.forEach(this.removeWhiteSpace);
       this.tableValues = result;
       console.log(this.tableValues);
+      this.hideLoader();
     });
   }
 

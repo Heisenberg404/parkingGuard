@@ -24,4 +24,9 @@ export class AppComponent {
       this.showLoader = false;
     }
   }
+
+  changeLoader(event) {
+    console.log('el valor del loader es:' + event);
+    this.showLoader = event;
+  }
 }

@@ -8,7 +8,13 @@
 </div>
 <app-reports *ngIf="showReport"> </app-reports>
 <app-loader *ngIf="showLoader"></app-loader>
-<app-table [loader]="this.showLoader"></app-table>
-<app-price> </app-price>
+<div class="container-fluid">
+  <div>
+    <app-price></app-price>
+  </div>
+  <div>
+    <app-table [loader]="this.showLoader" (loaderChanged)="changeLoader($event)" *ngIf="!showLoader"></app-table>
+  </div>
+</div>
 <app-footer></app-footer>
 

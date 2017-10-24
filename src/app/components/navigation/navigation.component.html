@@ -16,12 +16,55 @@
         <a class="nav-link" href="#" (click)="showReportForm()">Report</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+        <!-- button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Price </button-->
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Prices</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+        <a class="nav-link" href="javascript:void(0)" (click)="moveBottom()">About</a>
       </li>
     </ul>
   </div>
 </nav>
+
+
+
+<!-- modal del prices -->
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 30px">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit price</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <label class="mr-sm-2" for="txtlistTypes">Vehicle type</label>
+          <select  class="custom-select mb-2 mr-sm-2 mb-sm-0" id="txtlistTypes" name="txtlistTypes"
+                   [(ngModel)]="typeSelected" (ngModelChange)="setVehiValues()">
+            <option *ngFor="let typeVeh of listTypes" [ngValue]="typeVeh">{{typeVeh.description}}</option>
+          </select>
+          <br>
+          <div class="form-group">
+            <label for="txtMinute" class="form-control-label">Value minute:</label>
+            <input type="text" [(ngModel)]="dataTypeSelected.valueMinute" class="form-control" name="txtMinute" id="txtMinute">
+          </div>
+          <div class="form-group">
+            <label for="txtMonth" class="form-control-label">Value month:</label>
+            <input type="text" class="form-control" [(ngModel)]="dataTypeSelected.valueMonth" id="txtMonth" name="txtMonth">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info" (click)="validateFields()">Update</button>
+        <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+      </div>
+      <span id="msjError">{{msjError}}</span>
+    </div>
+  </div>
+</div>
+
 

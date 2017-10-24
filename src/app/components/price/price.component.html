@@ -1,4 +1,6 @@
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Price </button>
+
+
+<!--button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Price </button-->
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 30px">
   <div class="modal-dialog" role="document">
@@ -11,16 +13,12 @@
       </div>
       <div class="modal-body">
         <form>
-          <div class="btn-group">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Vehycle type
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Car</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Motorcycle</a>
-            </div>
-          </div>
+          <label class="mr-sm-2" for="inlineFormCustomSelect">Vehicle type</label>
+          <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+            <option selected>Choose...</option>
+            <option value="1">Motorcycle</option>
+            <option value="2">Car</option>
+          </select>
           <br>
             <div class="form-group">
             <label for="txtMinute" class="form-control-label">Value minute:</label>

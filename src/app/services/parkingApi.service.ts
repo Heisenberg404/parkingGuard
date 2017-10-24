@@ -56,4 +56,15 @@ export class ParkingApiService {
     return this.http.put(url, JSON.stringify(vehicleOut), options).map(res => res.json());
   }
 
+  getTypesVehicles () {
+    const query = 'VehicleTypes';
+    const url = this.baseUrl + query;
+    return this.http.get(url).map(res => res.json());
+  }
+
+  getPricesById (id: any) {
+    const query = 'Prices';
+    const url = this.baseUrl + query + '/' + id;
+    return this.http.get(url).map(res => res.json());
+  }
 }
