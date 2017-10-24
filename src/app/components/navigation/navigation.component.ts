@@ -59,5 +59,15 @@ export class NavigationComponent implements OnInit {
     window.scrollTo(0, document.body.scrollHeight);
   }
 
+  updatePrice() {
+    console.log(this.dataTypeSelected);
+    if (this.dataTypeSelected) {
+      this._parkingApiService.updatePrice(this.dataTypeSelected).subscribe(result => {
+        console.log('update price is: ' + this.dataTypeSelected);
+      });
+    }
+
+  }
+
 
 }

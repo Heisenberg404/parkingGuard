@@ -67,4 +67,12 @@ export class ParkingApiService {
     const url = this.baseUrl + query + '/' + id;
     return this.http.get(url).map(res => res.json());
   }
+
+  updatePrice (param: any) {
+    const query = 'Prices/' + param.id;
+    const url = this.baseUrl + query;
+    const headers = new Headers({'Content-Type' : 'application/json'});
+    const options = new RequestOptions({headers : headers});
+    return this.http.put(url, JSON.stringify(param), options).map(res => res.json());
+  }
 }
