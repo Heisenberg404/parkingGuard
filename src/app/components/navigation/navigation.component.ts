@@ -9,6 +9,7 @@ import {ParkingApiService} from '../../services/parkingApi.service';
 export class NavigationComponent implements OnInit {
   msjError = '';
   minutePrice: any;
+  validForm = false;
   monthPrice: any;
   typeSelected: any;
   dataTypeSelected = {
@@ -62,21 +63,23 @@ export class NavigationComponent implements OnInit {
   }
 
  validateFields () {
-    if (!/^[0-9]+$/.test(this.minutePrice)) {
-      this.msjError = 'el campo minuto solo acepta enteros';
+    if (!/^[0-9]+$/.test(this.minutePrice) || !/^[0-9]+$/.test(this.monthPrice)) {
+      this.msjError = 'los campos de minuto o precio solo pueden contener numeros enteros';
+      this.validForm = false;
     }else {
       this.msjError = '';
+      this.validForm = true;
     }
+    return this.validForm;
   }
   updatePrice() {
-    console.log(this.dataTypeSelected);
-    if (this.dataTypeSelected) {
-      this._parkingApiService.updatePrice(this.dataTypeSelected).subscribe(result => {
-        console.log('update price is: ' + this.dataTypeSelected);
-      });
+    if (this.validateFields()) {
+      console.log(this.dataTypeSelected);
+      if (this.dataTypeSelected) {
+        this._parkingApiService.updatePrice(this.dataTypeSelected).subscribe(result => {
+          console.log('update price is: ' + this.dataTypeSelected);
+        });
+      }
     }
-
   }
-
-
 }
