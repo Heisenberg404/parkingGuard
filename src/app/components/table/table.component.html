@@ -31,7 +31,7 @@
             <label for="licesetextMoto" class="col-2 col-form-label" style="margin-left: 20px">License</label>
             <div class="col-8">
               <input class="form-control" type="text" value="{{recordSelected.license}}"
-                     [(ngModel)]="recordSelected.license" id="licesetextMoto">
+                     [(ngModel)]="recordSelected.license" id="licesetextMoto" name="licesetextMoto">
             </div>
           </div>
 
@@ -93,9 +93,10 @@
         <button type="button" class="btn btn-info btn-modal" data-dismiss="modal" *ngIf="recordSelected.state === 'DISP'" (click)="inNewVeh()">
           Ingresar
         </button>
-        <button type="button" class="btn btn-danger btn-modal" data-dismiss="modal" *ngIf="recordSelected.state === 'OCUP'"  (click)="outVehicle()">
+        <button type="button" class="btn btn-danger btn-modal"  data-dismiss="modal" *ngIf="recordSelected.state === 'OCUP'"  (click)="outVehicle()">
           Salir
         </button>
+        <span id="msjError">{{msjError}}</span>
       </div>
     </div>
 

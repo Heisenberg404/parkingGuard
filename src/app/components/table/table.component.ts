@@ -7,6 +7,9 @@ import { ParkingApiService} from '../../services/parkingApi.service';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
+  msjError = '';
+  license: '';
+  isValidForm=false;
   tableValues: any;
   @Input('loader') loader: boolean;
   @Output() loaderChanged = new EventEmitter();
@@ -60,7 +63,9 @@ export class TableComponent implements OnInit {
   }
 
   inNewVeh() {
-    console.log('record selected');
+
+    if(this.validateFields()){
+      console.log('record selected');
     console.log(this.recordSelected);
     this.itemToSave.license = this.recordSelected.license;
     this.itemToSave.idCell = this.recordSelected.id;
@@ -72,6 +77,8 @@ export class TableComponent implements OnInit {
       this.loadDataTable();
       console.log(result);
     });
+    }
+    
   }
 
   loadDataTable() {
@@ -99,5 +106,18 @@ export class TableComponent implements OnInit {
       this.loadDataTable();
       console.log(result);
     });
+  }
+
+  validateFields () {
+
+    if (/[A-Za-z]{3}[0-9]{2}[A-Za-z]{1}/.test(this.recordSelected.license)) {
+      this.msjError = '';
+      this.isValidForm=true;
+    }else {
+      this.msjError = 'el campo licencia no concuerda con un número de placa';
+      this.isValidForm=false;
+      console.log(this.recordSelected.license);
+    }
+    return this.isValidForm;
   }
 }
