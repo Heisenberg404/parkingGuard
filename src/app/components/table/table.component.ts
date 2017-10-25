@@ -110,14 +110,31 @@ export class TableComponent implements OnInit {
 
   validateFields () {
 
-    if (/[A-Za-z]{3}[0-9]{2}[A-Za-z]{1}/.test(this.recordSelected.license)) {
+    if(Number(this.recordSelected.numCell.substring(1, 0)) == 1){
+      if (/[A-Za-z]{3}[0-9]{2}[A-Za-z]{1}/.test(this.recordSelected.license)) {
       this.msjError = '';
       this.isValidForm=true;
     }else {
-      this.msjError = 'el campo licencia no concuerda con un número de placa';
+      this.msjError = 'el campo licencia no concuerda con un número de placa de motocicleta';
       this.isValidForm=false;
-      console.log(this.recordSelected.license);
+      console.log(this.recordSelected.numCell);
     }
     return this.isValidForm;
+    }
+    else if(Number(this.recordSelected.numCell.substring(1, 0)) == 2) {
+        if (/[A-Za-z]{3}[0-9]{3}/.test(this.recordSelected.license)) {
+      this.msjError = '';
+      this.isValidForm=true;
+    }else {
+      this.msjError = 'el campo licencia no concuerda con un número de placa de automovil';
+      this.isValidForm=false;
+      console.log(this.recordSelected.numCell);
+    }
+    return this.isValidForm;
+    }
+      
+    
   }
+  
 }
+
