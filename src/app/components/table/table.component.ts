@@ -117,6 +117,7 @@ export class TableComponent implements OnInit {
     }else {
       this.msjError = 'el campo licencia no concuerda con un número de placa de motocicleta';
       this.isValidForm=false;
+      this.recordSelected.license = null;
       console.log(this.recordSelected.numCell);
     }
     return this.isValidForm;
