@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   };
 
   msjError = '';
+  isValidForm=false;
 
   loggedUSer: any = null;
 
@@ -30,7 +31,7 @@ export class LoginComponent implements OnInit {
   }
   checkUser () {
     this.validateFields ();
-    if (this.msjError='') {
+    if (this.isValidForm) {
     this._parkingApiService.checkUser(this.user).subscribe(result => {
       console.log('resultado: ' + result);
       this.loggedUSer = result;
@@ -42,12 +43,15 @@ export class LoginComponent implements OnInit {
   }
 
   validateFields () {
-    if (/^[0-9]+$/.test(this.user.username)) {
-      this.msjError = 'el usuario debe ser solo letras';
-    } else if (!/^[0-9]+$/.test(this.user.pass)) {
-      this.msjError = 'f'
+    if ( !/^[A-Za-z]+$/.test(this.user.username)) {
+      this.msjError = 'el usuario es obligatorio y solo deben ser letras';
+      this.isValidForm =false;
+    } else if (isFinite(this.user.pass)) {
+      this.msjError = 'el pass no debe ser nullo';
+      this.isValidForm =false;
     } else {
       this.msjError = '';
+      this.isValidForm =true;
     }
   }
 
