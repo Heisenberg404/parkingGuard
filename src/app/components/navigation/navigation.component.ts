@@ -14,9 +14,9 @@ export class NavigationComponent implements OnInit {
   typeSelected: any;
   dataTypeSelected = {
     'id': 0,
-    'valueMinute': 0,
+    'valueMinute': '',
     'idVehicleType': 0,
-    'valueMonth': 0
+    'valueMonth': ''
   };
   listTypes: any;
   showLogin = false;
@@ -63,8 +63,11 @@ export class NavigationComponent implements OnInit {
   }
 
  validateFields () {
-    if (!/^[0-9]+$/.test(this.minutePrice) || !/^[0-9]+$/.test(this.monthPrice)) {
-      this.msjError = 'los campos de minuto o precio solo pueden contener numeros enteros';
+    if (!/^[0-9]+$/.test(this.dataTypeSelected.valueMinute) ) {
+      this.msjError = 'el campo de minuto  solo pueden contener numeros enteros';
+      this.validForm = false;
+    }else if ( !/^[0-9]+$/.test(this.dataTypeSelected.valueMonth)) {
+      this.msjError = 'el campo de mes solo pueden contener numeros enteros';
       this.validForm = false;
     }else {
       this.msjError = '';
