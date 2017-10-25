@@ -14,11 +14,4 @@ export class PriceComponent implements OnInit {
   ngOnInit() {
   }
 
-  validateFields () {
-    if (!/^[0-9]+$/.test(this.minutePrice)) {
-      this.msjError = 'el campo minuto solo acepta enteros';
-    }else {
-      this.msjError = '';
-    }
-  }
 }
