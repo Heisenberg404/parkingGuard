@@ -9,7 +9,7 @@ export class AppComponent {
   showLogin = false;
   showReport = false;
   showLoader = false;
-
+  sessionUser;
   showLoginForm(event) {
     this.showLogin = event;
   }
