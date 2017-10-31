@@ -13,6 +13,17 @@ export class TableComponent implements OnInit {
   license: '';
   isValidForm= false;
   tableValues: any;
+  userMonthSelected = {
+      'id': 0,
+      'idUser': null,
+      'name': null,
+      'license": null,
+      'startDate": "0001-01-01T00:00:00",
+      'endDate": "0001-01-01T00:00:00",
+      'isPermited": false,
+      'TotalPrice": 0,
+      'mensaje": "User exists in parkCell 1G"
+  };
   @Input('loader') loader: boolean;
   @Output() loaderChanged = new EventEmitter();
   recordSelected = {
@@ -69,6 +80,14 @@ export class TableComponent implements OnInit {
   }
   setRecordSelected(item) {
     this.recordSelected = item;
+    if (this.recordSelected.state === 'ALQU') {
+      this._parkingApiService.getUserMonthData(this.recordSelected.id).subscribe(result => {
+        this.showLoader();
+        this.userMonthSelected = result;  
+        this.hideLoader();
+        console.log(this.userMonthSelected);
+      });
+    }
   }
 
   inNewVeh() {

@@ -75,4 +75,10 @@ export class ParkingApiService {
     const options = new RequestOptions({headers : headers});
     return this.http.put(url, JSON.stringify(param), options).map(res => res.json());
   }
+
+  getUserMonthData (id: any){
+    const query = 'UserMonthPayments';
+    const url = this.baseUrl + query + '/' + id;
+    return this.http.get(url).map(res => res.json());
+  }
 }
