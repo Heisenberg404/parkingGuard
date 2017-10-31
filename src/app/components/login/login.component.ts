@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   };
 
   msjError = '';
-  isValidForm=false;
+  isValidForm = false;
 
   loggedUSer: any = null;
 
@@ -45,14 +45,18 @@ export class LoginComponent implements OnInit {
   validateFields () {
     if ( !/^[A-Za-z]+$/.test(this.user.username)) {
       this.msjError = 'el usuario es obligatorio y solo deben ser letras';
-      this.isValidForm =false;
-    } else if (isFinite(this.user.pass)) {
+      this.isValidForm = false;
+    } else if (!isFinite(this.user.pass)) {
       this.msjError = 'el pass no debe ser nullo';
-      this.isValidForm =false;
+      this.isValidForm = false;
     } else {
       this.msjError = '';
-      this.isValidForm =true;
+      this.isValidForm = true;
     }
+  }
+  logOut() {
+    this.loggedUSer = null;
+
   }
 
 }
