@@ -1,7 +1,7 @@
 <!--a href="#" (click)
   ="showLoader()">ShowLoad</a>
-<a-- href="#" (click)="hideLoader()">HideLoad</a-->
-<button (click)="sweetAlert()">sweetalert</button>
+<a href="#" (click)="hideLoader()">HideLoad</a-->
+<!--button (click)="sweetAlert()">sweetalert</button-->
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -43,7 +43,12 @@
                      disabled>
             </div>
           </div>
-
+          <button type="button" class="btn btn-info btn-modal" *ngIf="recordSelected.state === 'DISP'" (click)="inNewVeh()">
+            In!!
+          </button>
+          <button type="button" class="btn btn-danger btn-modal"  data-dismiss="modal" *ngIf="recordSelected.state === 'OCUP'"  (click)="outVehicle()">
+            Get out!!
+          </button>
         </div>
 
 
@@ -57,10 +62,10 @@
           </div>
 
           <div class="form-group row" style="margin-top: 10px">
-            <label for="txtId" class="col-2 col-form-label" style="margin-left: 20px">Id
+            <label for="txtId" class="col-2 col-form-label" style="margin-left: 20px">Number identification
             </label>
             <div class="col-8">
-              <input class="form-control" type="text" value="" id="txtId" name="txtId" [(ngModel)] = "userMonthSelected.id">
+              <input class="form-control" type="text" value="" id="txtId" name="txtId" [(ngModel)] = "userMonthSelected.idUser">
             </div>
           </div>
 
@@ -72,33 +77,28 @@
           </div>
 
           <div class="form-group row" style="margin-top: 10px">
-            <label for="example-date-input-1" class="col-2 col-form-label" style="margin-left: 20px">Date </label>
-            <input class="form-control" type="date" value="" id="example-date-input-1" name="example-date-input-1" style="width: 322px;
-              margin-left: 14px;"/>
+            <label for="example-date-input-1" class="col-2 col-form-label" style="margin-left: 20px">Start date</label>
+            <input class="form-control" type="date" value="" id="date-input-1" name="date-input-1" style="width: 322px;
+              margin-left: 14px;" [ngModel] = "userMonthSelected.startDate | date:'yyyy-MM-dd'" (ngModelChange)="userMonthSelected.startDate = $event"/>
           </div>
 
 
           <div class="form-group row" style="margin-top: 10px">
-            <label for="example-date-input-2" class="col-2 col-form-label" style="margin-left: 20px">Date </label>
-            <input class="form-control" type="date" value="" id="example-date-input-2" name="example-date-input-2" style="width: 322px;
-              margin-left: 14px;"/>
+            <label for="example-date-input-2" class="col-2 col-form-label" style="margin-left: 20px">End date </label>
+            <input class="form-control" type="date" value="" id="date-input-2" name="date-input-2" style="width: 322px;
+              margin-left: 14px;" [ngModel] = "userMonthSelected.endDate | date:'yyyy-MM-dd'" (ngModelChange)="userMonthSelected.endDate = $event">
           </div>
-
+          <button type="button" class="btn btn-info btn-modal" data-dismiss="modal" *ngIf="recordSelected.state === 'DISP'" (click)="saveUserMonth()">
+            Register
+          </button>
+          <button type="button" class="btn btn-info btn-modal" data-dismiss="modal" *ngIf="recordSelected.state === 'ALQU'" (click)="savePayMonth()">
+            New Pay
+          </button>
         </div>
 
       </div>
 
       <div class="modal-footer">
-
-        <button type="button" class="btn btn-info btn-modal" data-dismiss="modal" *ngIf="recordSelected.state === 'DISP'" (click)="inNewVeh()">
-          Ingresar
-        </button>
-        <button type="button" class="btn btn-info btn-modal" data-dismiss="modal" *ngIf="recordSelected.state === 'ALQU'" (click)="inNewVeh()">
-          Registrar
-        </button>
-        <button type="button" class="btn btn-danger btn-modal"  data-dismiss="modal" *ngIf="recordSelected.state === 'OCUP'"  (click)="outVehicle()">
-          Salir
-        </button>
         <span id="msjError">{{msjError}}</span>
       </div>
     </div>

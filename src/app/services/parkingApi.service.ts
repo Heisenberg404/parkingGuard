@@ -81,4 +81,26 @@ export class ParkingApiService {
     const url = this.baseUrl + query + '/' + id;
     return this.http.get(url).map(res => res.json());
   }
+
+  saveUserMonth (userMonth: any) {
+    const query = 'UserMonthPayments';
+    const url = this.baseUrl + query;
+    const headers = new Headers({'Content-Type' : 'application/json'});
+    const options = new RequestOptions({headers : headers});
+    return this.http.post(url, JSON.stringify(userMonth), options).map(res => res.json());
+  }
+
+  savePaymonth(data: any, id: number) {
+    const query = 'UserMonthPayments/' + id;
+    const url = this.baseUrl + query;
+    const headers = new Headers({'Content-Type' : 'application/json'});
+    const options = new RequestOptions({headers : headers});
+    return this.http.put(url, JSON.stringify(data), options).map(res => res.json());
+  }
+
+  getDataReport() {
+    const query = 'Records';
+    const url = this.baseUrl + query;
+    return this.http.get(url).map(res => res.json());
+  }
 }
