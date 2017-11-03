@@ -12,6 +12,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PriceComponent } from './components/price/price.component';
 import { ReportsComponent } from './components/reports/reports.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { CarouselModule } from 'angular4-carousel';
+import { CarouselParkComponent } from './components/carousel-park/carousel-park.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,12 +24,14 @@ import { LoaderComponent } from './components/loader/loader.component';
     FooterComponent,
     PriceComponent,
     ReportsComponent,
-    LoaderComponent
+    LoaderComponent,
+    CarouselParkComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    CarouselModule
   ],
   providers: [
     ParkingApiService

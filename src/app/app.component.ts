@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  sessionGlobal: any;
   showLogin = false;
   showReport = false;
   showLoader = false;
@@ -29,4 +30,10 @@ export class AppComponent {
     console.log('el valor del loader es:' + event);
     this.showLoader = event;
   }
+
+  getValueSession(event) {
+    this.sessionGlobal = event;
+    console.log('user in session : ' + this.sessionGlobal);
+  }
+
 }

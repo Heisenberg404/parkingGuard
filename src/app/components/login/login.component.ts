@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { ParkingApiService} from '../../services/parkingApi.service';
 
 @Component({
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   msjError = '';
   isValidForm = false;
-
+  @Output() globalSession = new EventEmitter();
   loggedUSer: any = null;
 
   constructor(private _parkingApiService: ParkingApiService) { }
@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
     this._parkingApiService.checkUser(this.user).subscribe(result => {
       console.log('resultado: ' + result);
       this.loggedUSer = result;
+      this.globalSession.emit(this.loggedUSer);
       console.log('el usuario en sesion es: ' + this.loggedUSer.username + 'con id: ' + this.loggedUSer.id);
     });
     }else {
@@ -56,6 +57,7 @@ export class LoginComponent implements OnInit {
   }
   logOut() {
     this.loggedUSer = null;
+    this.globalSession.emit(this.loggedUSer);
 
   }
 

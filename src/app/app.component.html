@@ -3,17 +3,18 @@
 <app-header *ngIf="!showLogin"></app-header>
 <div class="jumbotron jumbotron-fluid jumbo-header" *ngIf="showLogin">
   <div class="container">
-    <app-login></app-login>
+    <app-login (globalSession)="getValueSession($event)"></app-login>
   </div>
 </div>
-<app-reports *ngIf="showReport"> </app-reports>
+<app-reports *ngIf="showReport && sessionGlobal"> </app-reports>
 <app-loader *ngIf="showLoader"></app-loader>
 <div class="container-fluid">
   <div>
     <app-price></app-price>
   </div>
   <div>
-    <app-table [loader]="this.showLoader" (loaderChanged)="changeLoader($event)" *ngIf="!showLoader"></app-table>
+    <app-table [loader]="this.showLoader" (loaderChanged)="changeLoader($event)" *ngIf="!showLoader && sessionGlobal"></app-table>
+    <app-carousel-park *ngIf="!sessionGlobal"></app-carousel-park>
   </div>
 </div>
 <app-footer></app-footer>
