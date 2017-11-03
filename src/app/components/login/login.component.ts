@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
     if ( !/^[A-Za-z]+$/.test(this.user.username)) {
       this.msjError = 'el usuario es obligatorio y solo deben ser letras';
       this.isValidForm = false;
-    } else if (isFinite(this.user.pass)) {
+    } else if (!isFinite(this.user.pass)) {
       this.msjError = 'el pass no debe ser nullo';
       this.isValidForm = false;
     } else {

@@ -3,6 +3,7 @@ import { ParkingApiService} from '../../services/parkingApi.service';
 // ES6 Modules or TypeScript
 import swal from 'sweetalert2';
 
+
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -13,6 +14,17 @@ export class TableComponent implements OnInit {
   license: '';
   isValidForm= false;
   tableValues: any;
+  userMonthSelected = {
+      'id': 0,
+      'idUser': '',
+      'name': '',
+      'license': '',
+      'startDate': '',
+      'endDate': '',
+      'isPermited': null,
+      'TotalPrice': 0,
+      'mensaje': ''
+  };
   @Input('loader') loader: boolean;
   @Output() loaderChanged = new EventEmitter();
   recordSelected = {
@@ -51,10 +63,10 @@ export class TableComponent implements OnInit {
     this.loadDataTable();
   }
 
-  sweetAlert() {
+  sweetAlert(message: any) {
     swal(
       'Good job!',
-      'You clicked the button!',
+      message,
       'success'
     );
   }
@@ -69,23 +81,34 @@ export class TableComponent implements OnInit {
   }
   setRecordSelected(item) {
     this.recordSelected = item;
+    if (this.recordSelected.state === 'ALQU') {
+      this._parkingApiService.getUserMonthData(this.recordSelected.id).subscribe(result => {
+        this.showLoader();
+        this.userMonthSelected = result;  
+        this.hideLoader();
+        console.log(this.userMonthSelected);
+      });
+    }
   }
 
   inNewVeh() {
 
     if (this.validateFields()) {
       console.log('record selected');
-    console.log(this.recordSelected);
-    this.itemToSave.license = this.recordSelected.license;
-    this.itemToSave.idCell = this.recordSelected.id;
-    this.itemToSave.idprice =  Number(this.recordSelected.numCell.substring(1, 0));
-    console.log('item to save');
-    console.log(this.itemToSave);
-    this._parkingApiService.saveItem(this.itemToSave).subscribe(result => {
-      console.log('guardado !');
-      this.loadDataTable();
-      console.log(result);
-    });
+      console.log(this.recordSelected);
+      this.itemToSave.license = this.recordSelected.license;
+      this.itemToSave.idCell = this.recordSelected.id;
+      this.itemToSave.idprice =  Number(this.recordSelected.numCell.substring(1, 0));
+      console.log('item to save');
+      console.log(this.itemToSave);
+      this._parkingApiService.saveItem(this.itemToSave).subscribe(result => {
+        console.log('guardado !');
+        this.loadDataTable();
+        console.log(result);
+        this.sweetAlert("New car in " + this.recordSelected.license + " stored at!! " + this.recordSelected.numCell);
+        this.cleanSelected();
+        
+      });
     }
 
   }
@@ -123,25 +146,94 @@ export class TableComponent implements OnInit {
       if (/[A-Za-z]{3}[0-9]{2}[A-Za-z]{1}/.test(this.recordSelected.license)) {
       this.msjError = '';
       this.isValidForm = true;
-    }else {
-      this.msjError = 'el campo licencia no concuerda con un número de placa de motocicleta';
-      this.isValidForm = false;
-      this.recordSelected.license = null;
-      console.log(this.recordSelected.numCell);
-    }
-    return this.isValidForm;
-    }else if (Number(this.recordSelected.numCell.substring(1, 0)) === 2) {
+      }else {
+        this.msjError = 'el campo licencia no concuerda con un número de placa de motocicleta';
+        this.isValidForm = false;
+        this.recordSelected.license = null;
+        console.log(this.recordSelected.numCell);
+      }
+    } else if (Number(this.recordSelected.numCell.substring(1, 0)) === 2) {
         if (/[A-Za-z]{3}[0-9]{3}/.test(this.recordSelected.license)) {
-      this.msjError = '';
-      this.isValidForm = true;
-    }else {
-      this.msjError = 'el campo licencia no concuerda con un número de placa de automovil';
-      this.isValidForm = false;
-      console.log(this.recordSelected.numCell);
+          this.msjError = '';
+          this.isValidForm = true;
+      } else {
+        this.msjError = 'el campo licencia no concuerda con un número de placa de automovil';
+        this.isValidForm=false;
+        this.recordSelected.license=null;
+        console.log(this.recordSelected.numCell);
+      }
     }
     return this.isValidForm;
-    }
 
+
+  }
+
+  saveUserMonth(){
+    let userToSave = {
+      idUser : this.userMonthSelected.idUser,
+      name : this.userMonthSelected.name,
+      license : this.userMonthSelected.license,
+      startDate : this.userMonthSelected.startDate,
+      endDate : this.userMonthSelected.endDate,
+      parkCell : this.recordSelected.id,
+      vehicleType : (Number(this.recordSelected.numCell.substring(1, 0)) === 1 ? 1 : 2)
+    };
+    console.info("usuario a almacenar: ");
+    console.table(userToSave);
+    this._parkingApiService.saveUserMonth(userToSave).subscribe(result => {
+      console.log('guardado !');
+      this.loadDataTable();
+      console.log(result);
+      this.sweetAlert("New user " + result.name + " created!! \n" + 'value to pay: ' + result.TotalPrice);
+      this.cleanSelected();
+    });
+  }
+
+  cleanSelected() {
+    this.recordSelected.id = '';
+    this.recordSelected.license = '';
+    this.recordSelected.numCell = '';
+    this.recordSelected.state = '';
+    this.userMonthSelected.endDate = '';
+    this.userMonthSelected.id = 0;
+    this.userMonthSelected.idUser = '';
+    this.userMonthSelected.isPermited = '';
+    this.userMonthSelected.license = '';
+    this.userMonthSelected.mensaje = '';
+    this.userMonthSelected.name = '';
+    this.userMonthSelected.startDate = '';
+    this.userMonthSelected.TotalPrice = 0;
+  }
+
+  savePayMonth() {
+    /*
+      { 
+        "idUser": "1152443756", 
+        "name" : "Juan David", 
+        "license" : "ASF20E", 
+        "startDate" : "2017-8-14 09:55:40.120", 
+        "endDate" : "2017-11-14 09:55:40.120", 
+        "idPrice": "1",
+        "parkCell": "1"} 
+    */
+    let payToSave = {
+      idUser : this.userMonthSelected.idUser,
+      name : this.userMonthSelected.name,
+      license : this.userMonthSelected.license,
+      startDate : this.userMonthSelected.startDate,
+      endDate : this.userMonthSelected.endDate,
+      parkCell : this.recordSelected.id,
+      idPrice : (Number(this.recordSelected.numCell.substring(1, 0)) === 1 ? 1 : 2)
+    };
+    console.info("pago a almacenar: ");
+    console.table(payToSave);
+    this._parkingApiService.savePaymonth(payToSave, this.userMonthSelected.id).subscribe(result => {
+      console.log('guardado !');
+      this.loadDataTable();
+      console.log(result);
+      this.sweetAlert("New pay created!! " + 'value to pay: ' + result.ValorPago);
+      this.cleanSelected();
+    });
 
   }
 

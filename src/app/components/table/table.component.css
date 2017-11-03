@@ -18,6 +18,14 @@
         height:220px;
     }
 
+    .blockquote{
+      border-color: yellow;
+    }
+
+    #block1{
+      border-color: red;
+    }
+
 #horizontal-bar{
         border:2px solid #ccc;
         width:500px;
@@ -128,5 +136,13 @@
   width: 100%;
 }
 
+#infopark{
+  margin-left: 340px;
+}
 
-
+.blockquote-box{border-right:10px solid rgba(109, 104, 104, 0.904);margin-bottom:25px;
+                margin-left: 40px;}
+.blockquote-box.blockquote-primary{border-color:rgb(231, 224, 13)}
+.blockquote-box.blockquote-primary .square{background-color:#428BCA;color:#FFF}
+.blockquote-box.blockquote-danger{border-color:#D43F3A}
+.blockquote-box.blockquote-danger .square{background-color:#D9534F;color:#FFF}
