@@ -14,6 +14,7 @@ export class TableComponent implements OnInit {
   license: '';
   isValidForm= false;
   tableValues: any;
+  monthsToPay = 1;
   userMonthSelected = {
       'id': 0,
       'idUser': '',
@@ -84,7 +85,7 @@ export class TableComponent implements OnInit {
     if (this.recordSelected.state === 'ALQU') {
       this._parkingApiService.getUserMonthData(this.recordSelected.id).subscribe(result => {
         this.showLoader();
-        this.userMonthSelected = result;  
+        this.userMonthSelected = result;
         this.hideLoader();
         console.log(this.userMonthSelected);
       });
@@ -107,7 +108,7 @@ export class TableComponent implements OnInit {
         console.log(result);
         this.sweetAlert("New car in " + this.recordSelected.license + " stored at!! " + this.recordSelected.numCell);
         this.cleanSelected();
-        
+
       });
     }
 
@@ -158,8 +159,8 @@ export class TableComponent implements OnInit {
           this.isValidForm = true;
       } else {
         this.msjError = 'el campo licencia no concuerda con un número de placa de automovil';
-        this.isValidForm=false;
-        this.recordSelected.license=null;
+        this.isValidForm = false;
+        this.recordSelected.license = null;
         console.log(this.recordSelected.numCell);
       }
     }
@@ -168,25 +169,37 @@ export class TableComponent implements OnInit {
 
   }
 
-  saveUserMonth(){
-    let userToSave = {
+  saveUserMonth() {
+    const userToSave = {
       idUser : this.userMonthSelected.idUser,
       name : this.userMonthSelected.name,
       license : this.userMonthSelected.license,
       startDate : this.userMonthSelected.startDate,
-      endDate : this.userMonthSelected.endDate,
+      endDate : this.calcEndDate(),
       parkCell : this.recordSelected.id,
       vehicleType : (Number(this.recordSelected.numCell.substring(1, 0)) === 1 ? 1 : 2)
     };
-    console.info("usuario a almacenar: ");
+    console.log('usuario a almacenar: ');
     console.table(userToSave);
     this._parkingApiService.saveUserMonth(userToSave).subscribe(result => {
       console.log('guardado !');
       this.loadDataTable();
       console.log(result);
-      this.sweetAlert("New user " + result.name + " created!! \n" + 'value to pay: ' + result.TotalPrice);
+      this.sweetAlert('New user ' + result.name + ' created!! \n' + 'value to pay: ' + result.TotalPrice);
       this.cleanSelected();
     });
+  }
+
+  calcEndDate() {
+    const fechaArreglo = this.userMonthSelected.startDate.split('-');
+    let mesInicial = Number(fechaArreglo[1]);
+    mesInicial = mesInicial + Number(this.monthsToPay);
+    if (mesInicial > 12) {
+      const rest = mesInicial - 12;
+      mesInicial = rest;
+    }
+    const fechaFin = fechaArreglo[0] + '-' + '0' + mesInicial + '-' + fechaArreglo[2];
+    return fechaFin;
   }
 
   cleanSelected() {
@@ -206,17 +219,7 @@ export class TableComponent implements OnInit {
   }
 
   savePayMonth() {
-    /*
-      { 
-        "idUser": "1152443756", 
-        "name" : "Juan David", 
-        "license" : "ASF20E", 
-        "startDate" : "2017-8-14 09:55:40.120", 
-        "endDate" : "2017-11-14 09:55:40.120", 
-        "idPrice": "1",
-        "parkCell": "1"} 
-    */
-    let payToSave = {
+    const payToSave = {
       idUser : this.userMonthSelected.idUser,
       name : this.userMonthSelected.name,
       license : this.userMonthSelected.license,
@@ -225,17 +228,18 @@ export class TableComponent implements OnInit {
       parkCell : this.recordSelected.id,
       idPrice : (Number(this.recordSelected.numCell.substring(1, 0)) === 1 ? 1 : 2)
     };
-    console.info("pago a almacenar: ");
+    console.log('pago a almacenar: ');
     console.table(payToSave);
     this._parkingApiService.savePaymonth(payToSave, this.userMonthSelected.id).subscribe(result => {
       console.log('guardado !');
       this.loadDataTable();
       console.log(result);
-      this.sweetAlert("New pay created!! " + 'value to pay: ' + result.ValorPago);
+      this.sweetAlert('New pay created!! ' + 'value to pay: ' + result.ValorPago);
       this.cleanSelected();
     });
 
   }
+
 
 }
 

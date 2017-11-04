@@ -1,7 +1,4 @@
-<!--a href="#" (click)
-  ="showLoader()">ShowLoad</a>
-<a href="#" (click)="hideLoader()">HideLoad</a-->
-<!--button (click)="sweetAlert()">sweetalert</button-->
+
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -62,7 +59,7 @@
           </div>
 
           <div class="form-group row" style="margin-top: 10px">
-            <label for="txtId" class="col-2 col-form-label" style="margin-left: 20px">Number identification
+            <label for="txtId" class="col-2 col-form-label" style="margin-left: 20px">Id
             </label>
             <div class="col-8">
               <input class="form-control" type="text" value="" id="txtId" name="txtId" [(ngModel)] = "userMonthSelected.idUser">
@@ -77,16 +74,23 @@
           </div>
 
           <div class="form-group row" style="margin-top: 10px">
-            <label for="example-date-input-1" class="col-2 col-form-label" style="margin-left: 20px">Start date</label>
+            <label for="date-input-1" class="col-2 col-form-label" style="margin-left: 20px">Start date</label>
             <input class="form-control" type="date" value="" id="date-input-1" name="date-input-1" style="width: 322px;
               margin-left: 14px;" [ngModel] = "userMonthSelected.startDate | date:'yyyy-MM-dd'" (ngModelChange)="userMonthSelected.startDate = $event"/>
           </div>
 
 
-          <div class="form-group row" style="margin-top: 10px">
-            <label for="example-date-input-2" class="col-2 col-form-label" style="margin-left: 20px">End date </label>
-            <input class="form-control" type="date" value="" id="date-input-2" name="date-input-2" style="width: 322px;
-              margin-left: 14px;" [ngModel] = "userMonthSelected.endDate | date:'yyyy-MM-dd'" (ngModelChange)="userMonthSelected.endDate = $event">
+          <div class="form-group row">
+              <label class="col-2 col-form-label" style="margin-left: 20px" for="sltMonhts">Nº Meses: </label>
+              <select [(ngModel)]="monthsToPay" class="form-control" id="sltMonhts" style="width: 25%;
+              margin-left: 14px;">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+              </select>
           </div>
           <button type="button" class="btn btn-info btn-modal" data-dismiss="modal" *ngIf="recordSelected.state === 'DISP'" (click)="saveUserMonth()">
             Register
@@ -115,7 +119,7 @@
     <h2 class="text-center" id="titulo">State Park</h2>
     <hr class="star-primary" id="titulo1">
 
-    <div class="row" id="infopark">  
+    <div class="row" id="infopark">
       <blockquote class="blockquote-box blockquote-primary ">
         <p class="mb-0">Month</p>
       </blockquote>
@@ -125,8 +129,8 @@
       <blockquote class="blockquote-box">
           <p class="mb-0">Free</p>
         </blockquote>
-    
-    </div>    
+
+    </div>
 
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item">
