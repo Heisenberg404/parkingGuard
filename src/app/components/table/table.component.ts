@@ -179,15 +179,29 @@ export class TableComponent implements OnInit {
       parkCell : this.recordSelected.id,
       vehicleType : (Number(this.recordSelected.numCell.substring(1, 0)) === 1 ? 1 : 2)
     };
-    console.log('usuario a almacenar: ');
-    console.table(userToSave);
-    this._parkingApiService.saveUserMonth(userToSave).subscribe(result => {
-      console.log('guardado !');
-      this.loadDataTable();
-      console.log(result);
-      this.sweetAlert('New user ' + result.name + ' created!! \n' + 'value to pay: ' + result.TotalPrice);
-      this.cleanSelected();
+    if (this.validateNewUserMonth()) {
+      console.log('usuario a almacenar: ');
+      console.table(userToSave);
+      this._parkingApiService.saveUserMonth(userToSave).subscribe(result => {
+        console.log('guardado !');
+        this.loadDataTable();
+        console.log(result);
+        this.sweetAlert('New user ' + result.name + ' created!! \n' + 'value to pay: ' + result.TotalPrice);
+        this.cleanSelected();
     });
+    }
+  }
+
+  validateNewUserMonth() {
+    let isValidUserMoth = true;
+    if (!this.userMonthSelected.idUser || !this.userMonthSelected.name || !this.userMonthSelected.license ||
+        !this.userMonthSelected.startDate || !this.recordSelected.id || !this.recordSelected.numCell) {
+      isValidUserMoth = false;
+      this.msjError = 'None of fields cannot be null';
+      return isValidUserMoth;
+    }
+    this.msjError = '';
+    return isValidUserMoth;
   }
 
   calcEndDate() {

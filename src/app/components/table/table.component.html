@@ -92,7 +92,7 @@
                 <option>6</option>
               </select>
           </div>
-          <button type="button" class="btn btn-info btn-modal" data-dismiss="modal" *ngIf="recordSelected.state === 'DISP'" (click)="saveUserMonth()">
+          <button type="button" class="btn btn-info btn-modal" *ngIf="recordSelected.state === 'DISP'" (click)="saveUserMonth()">
             Register
           </button>
           <button type="button" class="btn btn-info btn-modal" data-dismiss="modal" *ngIf="recordSelected.state === 'ALQU'" (click)="savePayMonth()">
