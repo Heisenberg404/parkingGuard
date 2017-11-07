@@ -43,7 +43,7 @@
           <button type="button" class="btn btn-info btn-modal" *ngIf="recordSelected.state === 'DISP'" (click)="inNewVeh()">
             In!!
           </button>
-          <button type="button" class="btn btn-danger btn-modal"  data-dismiss="modal" *ngIf="recordSelected.state === 'OCUP'"  (click)="outVehicle()">
+          <button type="button" class="btn btn-danger btn-modal"  *ngIf="recordSelected.state === 'OCUP'"  (click)="outVehicle()">
             Get out!!
           </button>
         </div>
