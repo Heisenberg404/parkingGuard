@@ -136,10 +136,12 @@ export class TableComponent implements OnInit {
 
     this._parkingApiService.outVehicle(itemOut).subscribe(result => {
       console.log('salio!!');
+      this.sweetAlert('The vehicle out!! ' + 'value to pay: ' + result.ValorPago);
       this.loadDataTable();
       console.log(result);
     });
   }
+
 
   validateFields () {
 
